@@ -2,7 +2,7 @@
 
 
 ## Information
-Generates smaller sized png images and decreases app size and memory usage.
+Generates smaller sized png images. In this way, you can decreases app size and memory usage.
 
 
 ## Setup
