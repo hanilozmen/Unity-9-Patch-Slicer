@@ -6,7 +6,7 @@ namespace fd.OnionRing
 {
     public class TextureSlicerMenuItem
     {
-        private const string MenuItemName = "Assets/OnionRing -> 9-Slice Texture";
+        private const string MenuItemName = "Assets/Custom9PatchGenerator -> Slice Sprite";
         private const int MenuItemPriority = 1000;
 
 
@@ -92,7 +92,7 @@ namespace fd.OnionRing
             sourceTextureImporter.isReadable = readable;
             AssetDatabase.ImportAsset(inTexturePath, ImportAssetOptions.ForceUpdate);
 
-            string outTextureName = $"{textureName}_sliced";
+            string outTextureName = $"{textureName}_9sliced";
             outTexture.name = outTextureName;
 
             string outTexturePath = SaveTexture(outTexture, directoryPath, outTextureName, extension);
@@ -174,6 +174,7 @@ namespace fd.OnionRing
             }
 
             string outTexturePath = Path.Combine(directoryPath, $"{fileName}{extension}");
+
             outTexturePath = AssetDatabase.GenerateUniqueAssetPath(outTexturePath);
 
             var bytes = texture.EncodeToPNG();

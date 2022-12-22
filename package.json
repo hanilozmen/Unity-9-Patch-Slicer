@@ -1,20 +1,20 @@
 {
-  "name": "dev.fd.onionring",
-  "displayName": "OnionRing",
-  "version": "1.0.3",
-  "unity": "2019.4",
+  "name": "com.hanilozmen.unity9patchslicer",
+  "displayName": "Unity9PatchSlicer",
+  "version": "1.0.0",
+  "unity": "2020.3",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShutovPS/OnionRing-Unity.git"
+    "url": "git+https://github.com/hanilozmen/Unity-9-Patch-Slicer.git"
   },
-  "description": "Auto 9 slice sprite generator",
-  "documentationUrl": "https://github.com/ShutovPS/OnionRing-Unity",
+  "description": "Unity 9 slice sprite using Sprite Borders",
+  "documentationUrl": "https://github.com/hanilozmen/Unity-9-Patch-Slicer",
   "dependencies": {
   },
   "author": {
-    "name": "fd_crash",
-    "url" : "https://github.com/ShutovPS/"
+    "name": "hanilozmen",
+    "url" : "https://github.com/hanilozmen/"
   },
   "contributors": [
     {
@@ -24,6 +24,10 @@
     {
       "name": "fd_crash",
       "url" : "https://github.com/ShutovPS/"
+    },
+    {
+      "name": "hanilozmen",
+      "url" : "https://github.com/hanilozmen/"
     }
   ],
   "type": "library"

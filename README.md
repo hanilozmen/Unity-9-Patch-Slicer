@@ -1,23 +1,16 @@
-# OnionRing
+# Unity 9 Patch Slicing Based on Sprite Borders
 
 
 ## Information
-Auto 9-slicing sprite by spriteborders
+Generates smaller sized images and provides app size and memory usage decrease
 
 
 ## Instalation
 
-### Using Git
+### Import As Package
 
-Find the manifest.json file in the Packages folder of your project and add a line to `dependencies` field.
-
-* `"dev.fd.onionring": "https://github.com/ShutovPS/OnionRing-Unity.git"`
-
-To update the package, change suffix `#{version}` to the target version.
-
-* `"dev.fd.onionring": "https://github.com/ShutovPS/OnionRing-Unity.git#1.0.3",`
-
-Or, use [UpmGitExtension](https://github.com/mob-sakai/UpmGitExtension) to install and update the package.
+You can import packages using Unity Import Package.
+You can find versions in Build folder
 
 
 ## Instruction
@@ -47,4 +40,4 @@ MIT License (see [LICENSE](LICENSE))
 
 ## See Also
 
-* Original GitHub Page https://github.com/kyubuns/Auto9Slicer
+* Original GitHub Page https://github.com/kyubuns/Auto9Slicer , https://github.com/pshutov/OnionRing-Unity
