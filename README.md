@@ -5,7 +5,7 @@
 Generates smaller sized images and provides app size and memory usage decrease
 
 
-## Instalation
+## Setup
 
 ### Import As Package
 
@@ -13,7 +13,7 @@ You can import packages using Unity Import Package.
 You can find versions in Build folder
 
 
-## Instruction
+## Description
 
 Configure source image
 
