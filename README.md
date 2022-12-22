@@ -18,16 +18,16 @@ Note: Use Crunch Compression should be disabled for the source sprite.
 
 Configure source image sprite borders first
 
-<img src=".res/images/img4.png" width="300" />
+<img src=".res/images/img4.png" width="600" />
 
 Apply slice operation
 
-<img src=".res/images/img3.png" width="300" />
+<img src=".res/images/img3.png" width="600" />
 
 Congrats !! Before And After
 
-<img src=".res/images/img2.png" width="300" />
-<img src=".res/images/img1.png" width="300" />
+<img src=".res/images/img2.png" width="600" />
+<img src=".res/images/img1.png" width="600" />
 
 ## Release Notes
 
