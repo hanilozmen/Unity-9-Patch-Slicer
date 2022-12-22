@@ -11,6 +11,7 @@ Generates smaller sized png images. In this way, you can decreases app size and 
 
 You can import packages using Unity Import Package.
 You can find versions in Build folder
+
 Note: Use Crunch Compression should be disabled for the source sprite.
 
 
@@ -29,16 +30,18 @@ Congrats !! Before And After
 <img src=".res/images/img2.png" width="600" />
 <img src=".res/images/img1.png" width="600" />
 
+## Future Releases
+
+I am planning to add new features to this package in the future. 
+
+Original GitHub Pages: https://github.com/kyubuns/Auto9Slicer , https://github.com/pshutov/OnionRing-Unity
+
 ## Release Notes
 
 CHANGELOG (see [CHANGELOG](CHANGELOG.MD))
-
 
 ## License
 
 MIT License (see [LICENSE](LICENSE))
 
 
-## See Also
-
-* Original GitHub Page https://github.com/kyubuns/Auto9Slicer , https://github.com/pshutov/OnionRing-Unity
