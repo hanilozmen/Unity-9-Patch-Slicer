@@ -2,7 +2,7 @@
 
 
 ## Information
-Generates smaller sized images and provides app size and memory usage decrease
+Generates smaller sized png images and decreases app size and memory usage.
 
 
 ## Setup
@@ -11,22 +11,23 @@ Generates smaller sized images and provides app size and memory usage decrease
 
 You can import packages using Unity Import Package.
 You can find versions in Build folder
+Note: Use Crunch Compression should be disabled for the source sprite.
 
 
 ## Description
 
-Configure source image
+Configure source image sprite borders first
 
-<img src=".res/images/SourceImage.jpeg" width="300" />
+<img src=".res/images/img4.png" width="300" />
 
-Invoke action
+Apply slice operation
 
-<img src=".res/images/MenuItem.jpeg" width="300" />
+<img src=".res/images/img3.png" width="300" />
 
-Get result image
+Congrats !! Before And After
 
-<img src=".res/images/OutputImage.jpeg" width="300" />
-
+<img src=".res/images/img2.png" width="300" />
+<img src=".res/images/img1.png" width="300" />
 
 ## Release Notes
 
