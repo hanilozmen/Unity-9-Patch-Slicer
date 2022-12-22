@@ -2,7 +2,7 @@
 
 
 ## Information
-Generates smaller sized png images. In this way, you can decreases app size and memory usage.
+Generates smaller sized png images. In this way, you can decrease app size and memory usage.
 
 
 ## Setup
@@ -29,6 +29,14 @@ Congrats !! Before And After
 
 <img src=".res/images/img2.png" width="600" />
 <img src=".res/images/img1.png" width="600" />
+
+In order to not losing sprite references: 
+
+1- Move newly generated sprite outside of your Unity Project 
+
+2-Remove Old Sprite, make new sprite name same with the removed one. 
+
+3- Import new sprite to the same folder by dragging in Unity Editor.
 
 ## Future Releases
 
