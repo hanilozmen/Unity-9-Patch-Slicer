@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 
@@ -6,8 +7,12 @@ namespace fd.OnionRing
 {
     public class TextureSlicerMenuItem
     {
-        private const string MenuItemName = "Assets/Custom9PatchGenerator -> Slice Sprite";
-        private const int MenuItemPriority = 1000;
+        private const string MenuItemName = "Assets/Unity9 -> Slice Sprite";
+        
+        private const string MenuItemNameReplace = "Assets/Unity9 -> Slice And Replace";
+        private const int MenuItemPriorityReplace = 1000;
+        private const int MenuItemPriority = 1001;
+        
 
 
         [MenuItem(MenuItemName, priority = MenuItemPriority)]
@@ -22,9 +27,45 @@ namespace fd.OnionRing
             {
                 if (Selection.objects[i] is Texture2D texture2D)
                 {
-                    SlicedTexture(texture2D);
+                    SlicedTexture(texture2D, false);
                 }
             }
+        }
+        
+        [MenuItem(MenuItemNameReplace, priority = MenuItemPriorityReplace)]
+        private static void SliceAndReplaceTextureMenuItem()
+        {
+            if (Selection.objects == null || Selection.objects.Length == 0)
+            {
+                return;
+            }
+
+            for (int i = 0; i < Selection.objects.Length; i++)
+            {
+                if (Selection.objects[i] is Texture2D texture2D)
+                {
+                    SlicedTexture(texture2D, true);
+                }
+            }
+        }
+        
+        [MenuItem(MenuItemNameReplace, true, priority = MenuItemPriorityReplace)]
+        private static bool SliceAndReplaceTextureMenuItemValidation()
+        {
+            if (Selection.objects == null || Selection.objects.Length == 0)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < Selection.objects.Length; i++)
+            {
+                if (!(Selection.objects[i] is Texture2D))
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         [MenuItem(MenuItemName, true, priority = MenuItemPriority)]
@@ -46,7 +87,7 @@ namespace fd.OnionRing
             return true;
         }
 
-        private static void SlicedTexture(Texture2D texture)
+        private static void SlicedTexture(Texture2D texture, bool replace)
         {
             TextureImporter sourceTextureImporter = null;
             string inTexturePath = null;
@@ -92,10 +133,14 @@ namespace fd.OnionRing
             sourceTextureImporter.isReadable = readable;
             AssetDatabase.ImportAsset(inTexturePath, ImportAssetOptions.ForceUpdate);
 
-            string outTextureName = $"{textureName}_9sliced";
+            string outTextureName = $"{textureName}";
+            if (!replace)
+            {
+                outTextureName += "_9sliced";
+            }
             outTexture.name = outTextureName;
 
-            string outTexturePath = SaveTexture(outTexture, directoryPath, outTextureName, extension);
+            string outTexturePath = SaveTexture(outTexture, directoryPath, outTextureName, extension, replace);
 
             GameObject.DestroyImmediate(outTexture);
 
@@ -166,7 +211,7 @@ namespace fd.OnionRing
             return true;
         }
 
-        private static string SaveTexture(Texture2D texture, string directoryPath, string fileName, string extension)
+        private static string SaveTexture(Texture2D texture, string directoryPath, string fileName, string extension, bool replace)
         {
             if (!extension.StartsWith("."))
             {
@@ -175,9 +220,23 @@ namespace fd.OnionRing
 
             string outTexturePath = Path.Combine(directoryPath, $"{fileName}{extension}");
 
-            outTexturePath = AssetDatabase.GenerateUniqueAssetPath(outTexturePath);
+            
 
             var bytes = texture.EncodeToPNG();
+            if (replace)
+            {
+                try
+                {
+                    AssetDatabase.DeleteAsset(outTexturePath);
+                    AssetDatabase.Refresh();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    throw;
+                }
+            }
+            outTexturePath = AssetDatabase.GenerateUniqueAssetPath(outTexturePath);
             File.WriteAllBytes(outTexturePath, bytes);
 
             AssetDatabase.ImportAsset(outTexturePath, ImportAssetOptions.ForceUpdate);

@@ -30,6 +30,11 @@ Congrats !! Before And After
 <img src=".res/images/img2.png" width="600" />
 <img src=".res/images/img1.png" width="600" />
 
+There are two slice operation: with replace feature and without replace. Aware of that if you perform with replace, your original image will be overriden.
+
+
+Note: If you don't use replace, you may apply the following procedures.
+
 In order to not losing sprite references: 
 
 1- Move newly generated sprite outside of your Unity Project 
