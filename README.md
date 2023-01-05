@@ -30,7 +30,7 @@ Congrats !! Before And After
 <img src=".res/images/img2.png" width="600" />
 <img src=".res/images/img1.png" width="600" />
 
-There are two slice operation: with replace feature and without replace. Aware of that if you perform with replace, your original image will be overriden.
+There are two slice operations: replace enabled & disabled. Important: If you perform with replace enabled, your original image will be overriden.
 
 
 Note: If you don't use replace, you may apply the following procedures.
